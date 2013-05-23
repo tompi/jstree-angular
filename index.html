@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular jstree-directive</title>
+    </head>
+    <body>
+        <div id="treeDiv"></div>
+        <div ng-controller="TreeDemoCtrl" ng-app="treeDemo">
+            <div jstree selected-node="node1" selected-node-changed="nodeChanged" children-url="getchildren.json"></div>
+            <hr/>
+            <div jstree selected-node="node2" selected-node-changed="nodeChanged" children-url="getchildren2.json"></div>
+            <hr/>
+            <div jstree selected-node="node3" selected-node-changed="nodeChanged" children-url="getchildren.json"></div>            
+            <hr/>
+            <table class="table table-bordered">
+                <thead><tr><th>Variable</th><th>Value</th></tr></thead>
+                <tbody>
+                    <tr><td>node1</td><td><span ng-show="node1">id: {{node1.id}}, text: {{node1.text}}</span></td></tr>
+                    <tr><td>node1</td><td><span ng-show="node2">id: {{node2.id}}, text: {{node2.text}}</span></td></tr>
+                    <tr><td>node1</td><td><span ng-show="node3">id: {{node3.id}}, text: {{node3.text}}</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        <script src="jstree.js"></script>
+        
+        <script src="app.js"></script>
+        <script src="treeDirective.js"></script>
+        <script src="TreeDemoCtrl.js"></script>
+    </body>
+</html>

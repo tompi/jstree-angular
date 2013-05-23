@@ -1,0 +1,7 @@
+{"ts":1369292859611,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1369292906992,"patch":[[{"diffs":[[1,"app.controller('TreeDemoCtrl', ['$scope', function ($scope) {\r\n      $scope.test = \"hello\";\r\n    }]);"]],"start1":0,"start2":0,"length1":0,"length2":101}]],"length":101,"saved":false}
+{"ts":1369292912223,"patch":[[{"diffs":[[0,"function"],[-1," "],[0,"($scope)"]],"start1":42,"start2":42,"length1":17,"length2":16},{"diffs":[[0,"scope) {"],[-1,"\r\n  "],[1,"\n"],[0,"    $sco"]],"start1":52,"start2":52,"length1":20,"length2":17},{"diffs":[[0,"lo\";"],[-1,"\r\n    "],[1,"\n"],[0,"}]);"]],"start1":83,"start2":83,"length1":14,"length2":9}]],"length":92,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1369307512608,"patch":[[{"diffs":[[0,"hello\";\n"],[1,"    \n    $scope.nodeChanged = function(newVal) {\n        alert('You clicked ' + newVal.id);\n    }\n"],[0,"}]);"]],"start1":80,"start2":80,"length1":12,"length2":110}]],"length":190,"saved":false}
+{"ts":1369307535285,"patch":[[{"diffs":[[0,");\n    }"],[1,";"],[0,"\n}]);"]],"start1":177,"start2":177,"length1":13,"length2":14}]],"length":191,"saved":false}
+{"ts":1369307914581,"patch":[[{"diffs":[[0,"ked ' + "],[-1,"newVal"],[1,"$scope.node1"],[0,".id);\n  "]],"start1":160,"start2":160,"length1":22,"length2":28}]],"length":197,"saved":false}
+{"ts":1369307935775,"patch":[[{"diffs":[[0,"' + "],[-1,"$scope.node1"],[1,"newVal"],[0,".id)"]],"start1":164,"start2":164,"length1":20,"length2":14}]],"length":191,"saved":false}

@@ -1,0 +1,5 @@
+[ 
+    { "data" : "Node1", "title": "Node1", "isFolder": true, "children": [], "state": "closed", "attr": { "id": "n1" } },
+    { "data" : "Node2", "title": "Node2", "isFolder": true, "children": [], "state": "closed", "attr": { "id": "n2" } },
+    { "data" : "Node3", "title": "Node3", "isFolder": false, "attr": { "id": "n3" } }
+]
