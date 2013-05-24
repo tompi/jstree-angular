@@ -2,17 +2,36 @@
 <html lang="en-us">
     <head>
         <meta charset="utf-8">
-        <title>Angular jstree-directive</title>
+        <title>Angular jstree-directive</title>        
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+        
     </head>
     <body>
+    <div class="container">
         <div id="treeDiv"></div>
         <div ng-controller="TreeDemoCtrl" ng-app="treeDemo">
+            <h3>Tree</h3>
             <div jstree selected-node="node1" selected-node-changed="nodeChanged" children-url="getchildren.json"></div>
             <hr/>
             <div jstree selected-node="node2" selected-node-changed="nodeChanged" children-url="getchildren2.json"></div>
             <hr/>
             <div jstree selected-node="node3" selected-node-changed="nodeChanged" children-url="getchildren.json"></div>            
             <hr/>
+            
+            Valgt node: {{node4.text}} <a href="#" class="btn" ng-click="openDialog()">Endre</a>
+            <br/>
+            <div jqueryui-dialog 
+                title="Jalla #1"                
+                open="{{dialogOpen}}" 
+                ok-button="OK"
+                ok-callback="closeDialog()"
+                cancel-button="Cancel"
+                cancel-callback="closeDialog()">
+                
+                <div jstree selected-node="node4" selected-node-changed="nodeChanged" children-url="getchildren.json"></div>            
+                
+            </div>
             <table class="table table-bordered">
                 <thead><tr><th>Variable</th><th>Value</th></tr></thead>
                 <tbody>
@@ -21,14 +40,22 @@
                     <tr><td>node1</td><td><span ng-show="node3">id: {{node3.id}}, text: {{node3.text}}</span></td></tr>
                 </tbody>
             </table>
+            
+            <h3>Date</h3>
+            <label>Select Date: <input type="text" ui-date="dateOptions" ng-model="aDate"></label>
+            <div>{{aDate}}</div>
         </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+        
         <script src="jstree.js"></script>
         
         <script src="app.js"></script>
         <script src="treeDirective.js"></script>
-        <script src="TreeDemoCtrl.js"></script>
+        <script src="dialogDirective.js"></script>
+        <script src="TreeDemoCtrl.js"></script>        
     </body>
 </html>

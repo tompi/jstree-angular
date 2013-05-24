@@ -1,2 +1,2 @@
-var app = angular.module('treeDemo', []);
+var app = angular.module('treeDemo', ['ui']);
 
