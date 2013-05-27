@@ -15,5 +15,7 @@ app.controller('TreeDemoCtrl', ['$scope', function($scope) {
         changeYear: true,
         changeMonth: true,
         yearRange: '1900:-0'
-    };    
+    };
+    $scope.treeUrl = "getchildren.json";
+    $scope.treeUrl2 = "getchildren2.json";
 }]);

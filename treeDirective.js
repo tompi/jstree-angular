@@ -1,18 +1,19 @@
- app.directive('jstree', function($timeout) {
+ app.directive('jstree', function($timeout, $parse) {
      return {
          restrict: 'A',
          require: '?ngModel',
          scope: {
              selectedNode: '=',
-             childrenUrl: '@',
+             childrenUrl: '=',
              selectedNodeChanged: '='
          },
          link: function(scope, element, attrs) {
              var treeElement = $(element);
+             //$timeout(function() {
              var tree = treeElement.jstree({
                  "json_data": {
                      "ajax": {
-                         "url": attrs.childrenUrl,
+                         "url": scope.childrenUrl,
                          "data": function(n) {
                              return {
                                  "operation": "get_children",
@@ -23,6 +24,7 @@
                  },
                  "plugins": ["themes", "json_data", "ui"]
              });
+             //});
              tree.bind('select_node.jstree', function() {
                  $timeout(function() {
                      scope.selectedNode = {
