@@ -14,7 +14,10 @@ app.controller('TreeDemoCtrl', ['$scope', function($scope) {
     $scope.dateOptions = {
         changeYear: true,
         changeMonth: true,
-        yearRange: '1900:-0'
+        yearRange: '1900:-0',
+        onSelect:function(value){
+            $('.innerinput').val(value);
+        }
     };
     $scope.treeUrl = "getchildren.json";
     $scope.treeUrl2 = "getchildren2.json";

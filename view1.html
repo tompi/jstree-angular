@@ -1,0 +1,36 @@
+        <div ng-controller="TreeDemoCtrl">
+            <h3>Tree</h3>
+            <div jstree selected-node="node1" selected-node-changed="nodeChanged" children-url="treeUrl"></div>
+            <hr/>
+            <div jstree selected-node="node2" selected-node-changed="nodeChanged" children-url="treeUrl2"></div>
+            <hr/>
+            <div jstree selected-node="node3" selected-node-changed="nodeChanged" children-url="treeUrl"></div>            
+            <hr/>
+            
+            Valgt node: {{node4.text}} <a href="#" class="btn" ng-click="openDialog()">Endre</a>
+            <br/>
+            <div jqueryui-dialog 
+                title="Jalla #1"                
+                open="{{dialogOpen}}" 
+                ok-button="OK"
+                ok-callback="closeDialog()"
+                cancel-button="Cancel"
+                cancel-callback="closeDialog()">
+                <input type="text" ui-date="dateOptions" ng-model="aDate4" class="innerinput">
+                <div jstree selected-node="node4" selected-node-changed="nodeChanged" children-url="treeUrl"></div>            
+                
+            </div>
+            <table class="table table-bordered">
+                <thead><tr><th>Variable</th><th>Value</th></tr></thead>
+                <tbody>
+                    <tr><td>node1</td><td><span ng-show="node1">id: {{node1.id}}, text: {{node1.text}}</span></td></tr>
+                    <tr><td>node2</td><td><span ng-show="node2">id: {{node2.id}}, text: {{node2.text}}</span></td></tr>
+                    <tr><td>node3</td><td><span ng-show="node3">id: {{node3.id}}, text: {{node3.text}}</span></td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Date</h3>
+            <label>Select Date: <input type="text" ui-date="dateOptions" ng-model="aDate" class="outerinput"></label>
+            <div>{{aDate}}</div>
+            <input type="text"/>
+        </div>
